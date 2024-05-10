@@ -1,8 +1,11 @@
-import toFinite from './toFinite.js';
+import toFinite from "./toFinite.js";
 
 const freeParseFloat = parseFloat;
 
-function random(lower, upper) {
+function random(): number;
+function random(lower: number): number;
+function random(lower: number, upper: number): number;
+function random(lower?: number, upper?: number): number {
   if (lower === undefined && upper === undefined) {
     lower = 0;
     upper = 1;

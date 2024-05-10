@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "allowJs": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "target": "ES5"
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.js"]
+}

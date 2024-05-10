@@ -5,12 +5,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js"
+    "build": "tsc",
+    "start": "node --experimental-specifier-resolution=node ./dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "typescript": "^5.4.5",
     "uuid": "^9.0.1"
   }
 }
