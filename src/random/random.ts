@@ -1,4 +1,4 @@
-import toFinite from "./toFinite.js";
+import toFinite from "./toFinite";
 
 const freeParseFloat = parseFloat;
 

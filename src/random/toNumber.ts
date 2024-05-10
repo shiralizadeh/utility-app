@@ -1,5 +1,5 @@
-import isObject from './isObject.js';
-import isSymbol from './isSymbol.js';
+import isObject from './isObject';
+import isSymbol from './isSymbol';
 
 /** Used as references for various `Number` constants. */
 const NAN = 0 / 0;
