@@ -4,7 +4,7 @@
     "allowJs": true,
     "module": "ESNext",
     "moduleResolution": "node",
-    "target": "ES5"
+    "target": "ES6"
   },
   "include": ["./src/**/*.ts", "./src/**/*.js"]
 }

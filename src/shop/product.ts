@@ -1,4 +1,10 @@
-const products = [
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+}
+
+const products: Product[] = [
   { id: 1, name: "iPhone 13", price: 100 },
   { id: 2, name: "Samsung Galaxy S21", price: 200 },
   { id: 3, name: "Google Pixel 6", price: 300 },
@@ -11,24 +17,29 @@ const products = [
   { id: 10, name: "Nokia 9 PureView", price: 1000 },
 ];
 
-function filterProducts(query) {
-  return products.filter((product) => product.name.search(query) !== -1);
+function filterProducts(query: string): Product[] {
+  return products.filter((product) => product.name.includes(query));
 }
 
-function addProduct(product) {
+function addProduct(product: Product): void {
   products.push(product);
 }
 
-function removeProduct(id) {
+function removeProduct(id: number): void {
   const index = products.findIndex((product) => product.id === id);
 
-  products.splice(index, 1);
+  if (index !== -1) {
+    products.splice(index, 1);
+  }
 }
 
-function averagePrice() {
-  return (
-    products.reduce((acc, product) => acc + product.price, 0) / products.length
-  );
+function averagePrice(): number {
+  if (products.length === 0) {
+    return 0;
+  }
+
+  const total = products.reduce((acc, product) => acc + product.price, 0);
+  return total / products.length;
 }
 
 export { products, filterProducts, addProduct, removeProduct, averagePrice };
