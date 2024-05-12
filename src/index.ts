@@ -1,7 +1,7 @@
-import { random } from "./random/random.js";
-import { randomHash } from "./randomHash/randomHash.js";
-import { filterProducts } from "./shop/product.js";
-import { cart, addToCart, addQuantity } from "./shop/cart.js";
+import { random } from "./random/random";
+import { randomHash } from "./randomHash/randomHash";
+import { filterProducts } from "./shop/product";
+import { addQuantity, addToCart, cart } from "./shop/cart";
 
 // random number
 console.log(random(1, 100));
@@ -19,4 +19,3 @@ addToCart(samsungPhones[1]);
 addQuantity(samsungPhones[0]);
 
 console.log(cart);
-
