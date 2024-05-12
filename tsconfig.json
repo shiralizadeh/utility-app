@@ -3,7 +3,7 @@
     "outDir": "./dist",
     "allowJs": true,
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "target": "ES6"
   },
   "include": ["./src/**/*.ts", "./src/**/*.js"]

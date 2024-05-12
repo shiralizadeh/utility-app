@@ -1,22 +1,21 @@
 {
   "name": "utility-app",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node --experimental-specifier-resolution=node ./dist/index.js"
+    "build": "webpack",
+    "start": "node --experimental-specifier-resolution=node ./dist/main.bundle.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "typescript": "^5.4.5",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/uuid": "^9.0.8",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "webpack-cli": "^5.1.4"
   }
 }
