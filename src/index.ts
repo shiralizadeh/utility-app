@@ -1,5 +1,6 @@
 import { random } from "./random/random";
 import { randomHash } from "./randomHash/randomHash";
+import { addQuantity, addToCart, cart } from "./shop/cart";
 import { filterProducts } from "./shop/product";
 import { addQuantity, addToCart, cart } from "./shop/cart";
 
