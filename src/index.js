@@ -9,6 +9,13 @@ console.log(random(1, 100));
 console.log(randomHash());
 
 // shop
-const samsungPhones = filterProducts('Samsung');
+const samsungPhones = filterProducts("Samsung");
 
 console.log(samsungPhones);
+
+addToCart(samsungPhones[0]);
+addToCart(samsungPhones[1]);
+addQuantity(samsungPhones[0]);
+
+console.log(cart);
+
