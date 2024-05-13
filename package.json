@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@langchain/google-vertexai": "^0.0.14",
     "uuid": "^9.0.1"
   }
 }
