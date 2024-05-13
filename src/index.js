@@ -1,6 +1,7 @@
 import { random } from "./random/random.js";
 import { randomHash } from "./randomHash/randomHash.js";
 import { filterProducts } from "./shop/product.js";
+import { cart, addToCart, addQuantity } from "./shop/cart.js";
 
 // random number
 console.log(random(1, 100));
