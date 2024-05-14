@@ -25,6 +25,7 @@ const [, , jsFile] = process.argv;
 // init the VertexAI model
 const chatModel = new VertexAI({
   model: "gemini-1.0-pro-001",
+  temperature: 0,
   authOptions: {
     projectId: "mohamad-369510",
     keyFile: "./assistant/keys/mohamad-369510-8e89b4bacd71.json",
