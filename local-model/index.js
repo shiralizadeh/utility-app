@@ -1,6 +1,8 @@
 import fs from "fs";
-import { VertexAI } from "@langchain/google-vertexai";
+import { ChatLlamaCpp } from "@langchain/community/chat_models/llama_cpp";
+import { HumanMessage } from "@langchain/core/messages";
 
+const llamaPath = "./local-model/models/mistral-7b-openorca.Q4_K_M.gguf";
 const prompt = `
 You're an AI assistant who it helping developers to migrate codes from Javascript to Typescript.
 
@@ -22,25 +24,20 @@ Output in json format like this: { "content": "CODE" }
 // Get the file path from the command line arguments
 const [, , jsFile] = process.argv;
 
-// init the VertexAI model
-const chatModel = new VertexAI({
-  model: "gemini-1.0-pro-001",
-  authOptions: {
-    projectId: "mohamad-369510",
-    keyFile: "./assistant/keys/mohamad-369510-8e89b4bacd71.json",
-  },
-});
-
 // read js file
 const code = fs.readFileSync(jsFile, "utf8");
 
-// invoke prompt
-const answer = await chatModel.invoke(prompt.replace("{code}", code));
+const model = new ChatLlamaCpp({ modelPath: llamaPath });
 
-const { content } = JSON.parse(answer);
+const answer = await model.invoke([
+  new HumanMessage({ content: prompt.replace("{code}", code) }),
+]);
+
+const { content } = JSON.parse(answer.content);
 
 const jsFileName = jsFile.replace(".js", ".ts");
 
 fs.writeFileSync(jsFileName, content);
 
 console.log(`"${jsFileName}" has been created successfully!`);
+
